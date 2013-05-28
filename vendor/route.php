@@ -13,7 +13,7 @@ class Route
     {
         $uri = $_SERVER['REQUEST_URI'];
         $uri = explode( '?', $uri );
-
+        
         if( $uri[0] == $route ) {
             return true;
         } else {
