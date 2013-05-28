@@ -1,5 +1,5 @@
 # Curtiss
-Curtiss is the lightweight static site framework built for use with PHP5.2. Curtiss comes from the name of 'Curtiss Carrier Pigeons', an old school way of 'routing' a message between to parties - which is essentially what this application is; routing a url to a view.
+Curtiss is the lightweight static site framework built for use with PHP5.2. Curtiss comes from the name of 'Curtiss Carrier Pigeons', an old school way of 'routing' a message between to parties - which is essentially what this application is; routing a URL to a view with PHP5.2.
 
 ## Using Curtiss
 Give him a whirl - follow these simple steps to get started:
