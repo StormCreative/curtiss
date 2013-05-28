@@ -22,9 +22,12 @@ class Template
 
         if( Route::match($route) ) {
             self::load($view, $header, $footer);    
+            $output = true;
         } else {
-            return false;
+            $output = false;
         }
+
+        return $output;
     }
 
 

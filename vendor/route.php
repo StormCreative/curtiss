@@ -11,9 +11,9 @@ class Route
      */ 
     public static function match($route)
     {
-        $uri = $_SERVER['REQUEST_URI'];
+        $uri = str_replace(DIRECTORY, '', $_SERVER['REQUEST_URI']);
         $uri = explode( '?', $uri );
-        
+
         if( $uri[0] == $route ) {
             return true;
         } else {
