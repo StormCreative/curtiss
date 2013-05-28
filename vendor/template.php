@@ -14,12 +14,10 @@ class Template
      */ 
     public static function render($route, $view, $params=array(), $header=true, $footer=true)
     {
-        if ( count($params) > 0 ) {
-            extract( $params, EXTR_PREFIX_SAME, "wddx" );
-        }
+        self::extract_params();
 
         $view = $_SERVER['DOCUMENT_ROOT'].'/views/'.$view;
-        
+
         if( Route::match($route) ) {
             self::load($view, $header, $footer);    
             $output = true;
