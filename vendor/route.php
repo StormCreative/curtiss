@@ -14,7 +14,7 @@ class Route
         $uri = str_replace(DIRECTORY, '', $_SERVER['REQUEST_URI']);
         $uri = explode( '?', $uri );
 
-        if( $uri[0] == $route ) {
+        if( '/'.$uri[0] == $route ) {
             return true;
         } else {
             return false;

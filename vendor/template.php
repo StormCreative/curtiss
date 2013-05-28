@@ -19,7 +19,7 @@ class Template
         }
 
         $view = $_SERVER['DOCUMENT_ROOT'].'/views/'.$view;
-
+        
         if( Route::match($route) ) {
             self::load($view, $header, $footer);    
             $output = true;
