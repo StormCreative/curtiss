@@ -66,3 +66,12 @@ You will just need to set the last couple of arguments going into Render to FALS
      */
     Template::render('/test', 'test.php', array('style' => 'home', 'script' => 'main'), false, false);
 ```
+
+### Additional Note:
+
+If you have PHP5.4 installed on your computer, point to it! Ironically, although this is a PHP5.2 application I've set up a Rake task to load an internal PHP Server.
+
+So if you run the command `Rake server` you can access the site at `localhost:9292` in your browser.
+
+Why would you do this?! To keep everything seperate from MAMP and to load in the specific site of course.
+
