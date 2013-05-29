@@ -4,9 +4,9 @@
 
         </target>
         <target name="upload_files" depends="initialize">
-            <ftp server="78.109.163.36"
-                 userid="stormtest"
-                 password="h=qefR2"
+            <ftp server=""
+                 userid=""
+                 password=""
                  port="21"
                  remotedir="/httpdocs/drapewell"
                  passive="yes"
