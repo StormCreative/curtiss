@@ -1,0 +1,27 @@
+/**
+	Main Structure
+	==============
+**/
+
+* {
+	
+}
+
+body {
+	width: 960px;
+	margin: 0 auto;
+}
+
+.contain {
+	height: 900px;
+	padding: 40px;	
+}
+
+.safe-area {
+	border: 1px solid #ccc;
+	padding: 40px 0 40px 0;
+}
+
+a {
+	text-decoration: none;
+}

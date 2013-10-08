@@ -27,4 +27,20 @@ class testRouterTest extends \Codeception\TestCase\Test
         $this->assertFalse($output);
     }
 
+    public function testGetUri()
+    {
+        $output = Route::get_uri();
+        
+        $this->assertTrue($output['route'] == 'test');
+    }
+
+    public function testDecipher()
+    {
+        $output = Route::decipher('/test/get/?code=123');
+
+        $this->assertTrue($output['route'] == 'test');
+        $this->assertTrue($output['route_0'] == 'get');
+        $this->assertTrue($output['additions'] == 'code=123');
+    }
+
 }

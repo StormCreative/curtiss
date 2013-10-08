@@ -10,12 +10,12 @@ class testTemplateTest extends \Codeception\TestCase\Test
 
     protected function _before()
     {
-        $_SERVER['REQUEST_URI'] = '/test';
+        $_SERVER['REQUEST_URI'] = '/';
     }
 
     public function testRenderIsNotFalse()
     {
-        $output = Template::render('/test', 'test.php');
+        $output = Template::render('/', 'index.php');
 
         $this->assertTrue($output);
     }

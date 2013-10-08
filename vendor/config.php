@@ -15,11 +15,17 @@
 //---------------------------------------------------------------
 require( 'route.php' );
 require( 'template.php' );
+require( 'api.php' );
+require( 'database/settings.php' );
 
 
 //---------------------------------------------------------------
 // Set the site directory 
 //---------------------------------------------------------------
 $directory = getcwd();
+
 define( 'DIRECTORY', str_replace( $_SERVER[ 'DOCUMENT_ROOT' ], '', $directory ).'/' );
+
+define( 'PATH', $_SERVER['DOCUMENT_ROOT'].DIRECTORY );
+
 ?>

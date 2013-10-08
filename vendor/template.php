@@ -14,14 +14,17 @@ class Template
      */ 
     public static function render($route, $view, $params=array(), $header=true, $footer=true)
     {
-        self::extract_params();
+        self::extract_params($params);
 
-        $view = $_SERVER['DOCUMENT_ROOT'].'/views/'.$view;
+        $view = $_SERVER['DOCUMENT_ROOT'].DIRECTORY.'views/'.$view;
 
         if( Route::match($route) ) {
-            self::load($view, $header, $footer);    
+            self::load($view, $header, $footer, $params);    
             $output = true;
         } else {
+
+            // Return false so that other views can continue to render if there are multiples
+            // Within the main app script file.
             $output = false;
         }
 
@@ -36,19 +39,23 @@ class Template
      * @param bool $header
      * @param bool $footer
      */
-    protected static function load($view, $header, $footer)
+    protected static function load($view, $header, $footer, $params=array())
     {
         if( file_exists($view) ) {
+
+            extract($params, EXTR_PREFIX_SAME, "wddx");
+
             if( $header ) {
-                self::render_site_view('top');
+                require_once($_SERVER['DOCUMENT_ROOT'].DIRECTORY.'views/site/top.php');
             }
 
             require_once( $view );
 
             if( $footer ) {
-                self::render_site_view('footer');
+                require_once($_SERVER['DOCUMENT_ROOT'].DIRECTORY.'views/site/bottom.php');
             }
         } else {
+            throw new Exception('View file does not exist');
             return false;
         }
     }
@@ -61,7 +68,7 @@ class Template
      */ 
     protected static function render_site_view($position)
     {
-        require_once($_SERVER['DOCUMENT_ROOT'].'/views/site/'.$position.'.php');
+        require_once($_SERVER['DOCUMENT_ROOT'].DIRECTORY.'views/site/'.$position.'.php');
     }
 
 
