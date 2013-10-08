@@ -7,6 +7,7 @@ class Route
      * Match a given route to the URI
      * 
      * @param string $route
+     *
      * @return bool
      */ 
     public static function match($route)
@@ -29,6 +30,15 @@ class Route
         return $uri;
     }
 
+    /**
+     * This method deciphers a given URL into chunks
+     * and puts these into an associative array seperating 
+     * out the routes from the query strings
+     * 
+     * @param string $route - the route to decipher
+     *
+     * @return assoc array 
+     */
     public static function decipher($route)
     {   
         $result = array();
@@ -55,6 +65,14 @@ class Route
         return $result;
     }
 
+    /**
+     * Builds up the array of the query strings by their key => values
+     * and sets them as routes within the assoc array
+     * 
+     * @param array $routes
+     * 
+     * @return assoc array
+     */
     protected static function set_additional_params($routes)
     {
         $result = array();
