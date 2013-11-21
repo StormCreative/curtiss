@@ -23,7 +23,11 @@ class Route
 
     public static function get_uri()
     {
-        $uri = str_replace(DIRECTORY, '', $_SERVER['REQUEST_URI']);
+        $uri = $_SERVER['REQUEST_URI'];
+
+        if (!LIVE) {
+            $uri = str_replace(DIRECTORY, '', $uri);
+        }
 
         $uri = Route::decipher($uri);
 
