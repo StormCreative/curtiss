@@ -13,16 +13,18 @@
 //---------------------------------------------------------------
 // Require in the system classes to run the application
 //---------------------------------------------------------------
-require( 'route.php' );
-require( 'template.php' );
-require( 'api.php' );
-require( 'database/settings.php' );
+
+	require( 'route.php' );
+	require( 'template.php' );
+	require( 'api.php' );
+	require( 'database/settings.php' );
 
 
 //---------------------------------------------------------------
 // Set the site directory 
 //---------------------------------------------------------------
-$directory = getcwd();
+	
+	$directory = getcwd();
 
 /*
 |----------------------------------------------------------------
@@ -33,14 +35,16 @@ $directory = getcwd();
 | as a constant anywhere throughout the application
 |
 */
-define( 'DIRECTORY', str_replace( $_SERVER[ 'DOCUMENT_ROOT' ], '', $directory ).'/' );
+
+	define( 'DIRECTORY', str_replace( $_SERVER[ 'DOCUMENT_ROOT' ], '', $directory ).'/' );
 
 /*
 |----------------------------------------------------------------
 | The root path of the application
 |----------------------------------------------------------------
 */
-define( 'PATH', $_SERVER['DOCUMENT_ROOT'].DIRECTORY );
+
+	define( 'PATH', $_SERVER['DOCUMENT_ROOT'].DIRECTORY );
 
 /*
 |----------------------------------------------------------------
@@ -51,12 +55,13 @@ define( 'PATH', $_SERVER['DOCUMENT_ROOT'].DIRECTORY );
 | and sets true or false for the environment type
 |
 */
-$live = TRUE;
 
-if ($_SERVER['HTTP_HOST'] == 'localhost:8888' || substr($_SERVER['HTTP_HOST'], 0, 7) == '123.168') {
-	$live = FALSE;
-}
+	$live = TRUE;
 
-define( 'LIVE', $live );
+	if ($_SERVER['HTTP_HOST'] == 'localhost:8888' || substr($_SERVER['HTTP_HOST'], 0, 7) == '123.168') {
+		$live = FALSE;
+	}
+
+	define( 'LIVE', $live );
 
 ?>
