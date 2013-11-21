@@ -49,7 +49,7 @@ class API
 
 		$table = $route;
 
-		if( Route::match($table) ) {
+		if (Route::match($table)) {
 
 			$api = new API($table, $routes['additions']);
 
@@ -93,9 +93,8 @@ class API
 	 */
 	protected function handle_uri_params($params)
 	{
-		if( !!$params ) {
+		if (!!$params) {
 
-			
 			// Doing this if it was incoming from a string
 			// But then it doesn't make sense to have it coming
 			// incoming from a string, as its will always be a HTTP
@@ -103,7 +102,7 @@ class API
 
 			$params = explode('&', $params);
 
-			foreach( $params as $value ) {
+			foreach ($params as $value) {
 				$value = explode('=', $value);
 
 				// Build up the models where clause and the API's bind array
@@ -135,7 +134,7 @@ class API
 	{
 		$output = $this->model->all($this->binds);
 		
-		if( $output != false ) {
+		if ($output != false) {
 			$result = array('status' => 200,
 							'data' => $output
 							);
@@ -158,7 +157,7 @@ class API
 	{
 		$model = $this->table.'_model';
 
-		if( class_exists($model) ) {
+		if (class_exists($model)) {
 			$this->model = new $model();
 		}
 

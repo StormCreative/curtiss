@@ -18,7 +18,7 @@ class Template
 
         $view = $_SERVER['DOCUMENT_ROOT'].DIRECTORY.'views/'.$view;
 
-        if( Route::match($route) ) {
+        if (Route::match($route)) {
             self::load($view, $header, $footer, $params);    
             $output = true;
         } else {
@@ -41,17 +41,17 @@ class Template
      */
     protected static function load($view, $header, $footer, $params=array())
     {
-        if( file_exists($view) ) {
+        if (file_exists($view)) {
 
             extract($params, EXTR_PREFIX_SAME, "wddx");
 
-            if( $header ) {
+            if ($header) {
                 require_once($_SERVER['DOCUMENT_ROOT'].DIRECTORY.'views/site/top.php');
             }
 
             require_once( $view );
 
-            if( $footer ) {
+            if ($footer) {
                 require_once($_SERVER['DOCUMENT_ROOT'].DIRECTORY.'views/site/bottom.php');
             }
         } else {
@@ -77,7 +77,7 @@ class Template
      */
     protected static function extract_params($params)
     {
-        if( count($params) > 0 ) {
+        if (count($params) > 0) {
             extract( $params, EXTR_PREFIX_SAME, "wddx" );
         }
     }

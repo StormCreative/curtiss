@@ -81,7 +81,7 @@ class Route
     {
         $result = array();
 
-        for($i=0; $i<=count($routes); $i++) {
+        for ($i=0; $i<=count($routes); $i++) {
             if( !!$routes[$i] ) {
                 $result['route_'.$i] = $routes[$i];
             }
