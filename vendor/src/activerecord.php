@@ -90,7 +90,7 @@ abstract class Activerecord
      */
     public function __Construct($attributes = array(), $clean=false)
     {
-        if( count($attributes) > 0 && !$clean ) {
+        if (count($attributes) > 0 && !$clean) {
             $this->set_attributes($attributes);
             $this->_clean = $clean;
         }
@@ -107,7 +107,7 @@ abstract class Activerecord
     {
         $return = FALSE;
 
-        if( !!$title ) {
+        if (!!$title) {
             $all = $this->where( 'title = :title' )->all( array( 'title' => $title ) );
 
             if( !!$all ) {

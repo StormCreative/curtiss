@@ -14,7 +14,7 @@ class Route
     {
         $uri = Route::get_uri();
 
-        if( '/'.$uri['route'] == $route ) {
+        if ('/'.$uri['route'] == $route) {
             return true;
         } else {
             return false;
@@ -51,7 +51,7 @@ class Route
 
         $routes = explode('/', $route[0]);
 
-        if( $routes[0] == '') {
+        if ($routes[0] == '') {
             $route_target = 1;
         } else {
             $route_target = 0;
